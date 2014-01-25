@@ -10,17 +10,18 @@ public class BackgroundBehaviour : MonoBehaviour {
 	private LinkedList<Transform> roads = new LinkedList<Transform>();
 	private LinkedList<Transform> obstacles = new LinkedList<Transform>();
 	private float posX = 0.0f;
-	private int numberOfRoads = 7;
+	private int numberOfRoads = 5;
 	public static float speed = 8.0f;
 	private Transform lastRoad;
 	public float gameLength = 100f;
 	public float probability = 0.3f;
 	public float granularity = 3f;
 	private float gameProgress = 0.0f;
+	LinkedList<Transform> destroyList;
 	// Use this for initialization
 	void Start () {
 		obstacleGenerator (gameLength, probability, granularity);
-		
+		destroyList =  new LinkedList<Transform> ();
 		// Init the scene with some road-pieces
 		for(int i=0;i < numberOfRoads;i++) {
 			for(int j = 0; j < 2; j++)
@@ -32,23 +33,35 @@ public class BackgroundBehaviour : MonoBehaviour {
 		}
 		lastRoad = roads.Last.Value;
 	}
+	public float getGameProgress()
+	{
+		return gameProgress;
+	}
 
 	// Use this for initialization
 	void Update () {
-				Transform firstRoad = roads.First.Value;
-		
-				// Create a new road if the first one is not 
-				// in sight anymore and destroy the first one
-				if (firstRoad.localPosition.y < -15f) {
-						roads.Remove (firstRoad);
-						Destroy (firstRoad.gameObject);
-						newTile();
-				}
-		
+		Transform firstRoad = roads.First.Value;
+
+		// Create a new road if the first one is not 
+		// in sight anymore and destroy the first one
+		bool destroyed = false;
+		destroyList.Clear ();
+
 		// Move the available roads along the z-axis
 		foreach(Transform road in roads) {
-			road.Translate( 0f,-speed * Time.deltaTime,0f);      
+			if (road.localPosition.y < -15f) {
+				destroyList.AddLast(road);
+				destroyed = true;
+			}
+			else
+				road.Translate( 0f,-speed * Time.deltaTime,0f);      
 		}
+		foreach (Transform road in destroyList) {
+			roads.Remove (road);
+			Destroy (road.gameObject);
+		}
+		if(destroyed)	
+			newTile();
 		foreach(Transform obstac in obstacles) {
 			obstac.Translate( 0f,-speed * Time.deltaTime,0f);      
 		}
@@ -70,7 +83,7 @@ public class BackgroundBehaviour : MonoBehaviour {
 	// granularity stepsize (how often could there be an object: between 1-5 should be ok
 	void obstacleGenerator(float fieldLength, float probability, float granularity)
 	{
-		for(float i = 8.0f; i < fieldLength; i+=granularity)
+		for(float i = 8.0f; i < fieldLength-5; i+=granularity)
 		{
 			if(Random.Range(0.0f,1.0f)< probability)
 			{

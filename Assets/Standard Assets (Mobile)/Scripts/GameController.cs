@@ -8,14 +8,14 @@ public class GameController : MonoBehaviour {
 
 	Camera cam;
 	private GameObject active;
-	private LinkedList<float> path;
+
 	// Use this for initialization
 	void Start () {
 		cam = camera.GetComponentInChildren<Camera>();
-		bike.SetActive (false);
-		active = car;
-		path = new LinkedList<float> ();
-	
+		car.SetActive (false);
+		active = bike;
+		cam.orthographicSize = active.GetComponent<VehicleController>().camSize;
+		BackgroundBehaviour.speed = active.GetComponent<VehicleController> ().speed;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour {
 				}
 		Vector3 pos = camera.transform.position;
 		pos.x = active.transform.position.x;
-		path.AddLast (pos.x);
+	
 		//camera
 		camera.transform.position =pos ;
 		handleInput ();
@@ -57,18 +57,22 @@ public class GameController : MonoBehaviour {
 		}
 	public void switchUser()
 	{
-		active.SetActive (false);
+
 		if (active.name.Equals ("car")) 
 		{
+			active.GetComponent<VehicleController> ().activateCar (false);
 			active = bike;
+			active.GetComponent<VehicleController> ().activateBike (false);
 		}
 		else
 		{
+			active.GetComponent<VehicleController> ().activateBike (false);
 			active = car;
+			active.GetComponent<VehicleController> ().activateCar (false);
 		}
 		BackgroundBehaviour.speed = active.GetComponent<VehicleController> ().speed;
 		cam.orthographicSize = active.GetComponent<VehicleController>().camSize;
-		active.SetActive (true);
+	
 	}
 }
 
