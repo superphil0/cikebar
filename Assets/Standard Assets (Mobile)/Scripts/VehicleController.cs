@@ -13,7 +13,7 @@ public class VehicleController : MonoBehaviour {
 	float borderX = 3f;
 	void Start () {
 		bool isAndroid = (Application.platform == RuntimePlatform.Android);
-		Vector3 pos = new Vector3 (0, 0 ,0);
+		newPos = this.gameObject.transform.position;
 		//this.gameObject.transform.position = pos;
 
 	}
@@ -21,7 +21,7 @@ public class VehicleController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-	
+		
 		newPos =this.gameObject.transform.position;
 
 
@@ -29,6 +29,8 @@ public class VehicleController : MonoBehaviour {
 	}
 	public void move(float offset)
 	{
+		if (newPos == Vector3.zero)
+						return;
 		if (newPos.x + offset < borderX && newPos.x + offset > -1.0f * borderX) {
 			newPos.x = newPos.x + offset;
 			this.gameObject.transform.position = newPos;

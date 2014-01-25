@@ -23,8 +23,8 @@ public class GameController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			switchUser();
 				}
-		Vector3 pos = new Vector3(active.transform.position.x, 3f,-10);
-
+		Vector3 pos = camera.transform.position;
+		pos.x = active.transform.position.x;
 		//camera
 		camera.transform.position =pos ;
 		handleInput ();

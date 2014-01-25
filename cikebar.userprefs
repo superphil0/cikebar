@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets (Mobile)\Scripts\GameController.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs" Line="23" Column="83" />
-      <File FileName="Assets\Standard Assets (Mobile)\Scripts\VehicleController.cs" Line="32" Column="27" />
-      <File FileName="Assets\Standard Assets (Mobile)\Scripts\GameController.cs" Line="32" Column="16" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs" Line="32" Column="27" />
+      <File FileName="Assets\Standard Assets (Mobile)\Scripts\VehicleController.cs" Line="25" Column="5" />
+      <File FileName="Assets\Standard Assets (Mobile)\Scripts\GameController.cs" Line="26" Column="58" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
