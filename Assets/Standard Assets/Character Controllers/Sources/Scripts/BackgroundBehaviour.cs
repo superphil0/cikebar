@@ -13,14 +13,16 @@ public class BackgroundBehaviour : MonoBehaviour {
 	private int numberOfRoads = 5;
 	public static float speed = 8.0f;
 	private Transform lastRoad;
-	public float gameLength = 100f;
+	public float gameLength = 10f;
 	public float probability = 0.3f;
 	public float granularity = 3f;
 	private float gameProgress = 0.0f;
+	public GameController gameController;
 	LinkedList<Transform> destroyList;
 	// Use this for initialization
 	void Start () {
 		obstacleGenerator (gameLength, probability, granularity);
+		gameController = GameObject.Find ("GameController").GetComponent<GameController> ();
 		destroyList =  new LinkedList<Transform> ();
 		// Init the scene with some road-pieces
 		for(int i=0;i < numberOfRoads;i++) {
@@ -40,6 +42,8 @@ public class BackgroundBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Update () {
+		if (gameController.isGameOver())
+						return;
 		Transform firstRoad = roads.First.Value;
 
 		// Create a new road if the first one is not 
@@ -73,6 +77,7 @@ public class BackgroundBehaviour : MonoBehaviour {
 	}
 	void restart()
 	{
+		gameController.switchUser ();
 		foreach(Transform obstac in obstacles) {
 			obstac.Translate( 0f,gameProgress,0f);      
 		}
