@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 public class GameController : MonoBehaviour {
 	public GameObject car;
 	public GameObject bike;
@@ -8,13 +8,13 @@ public class GameController : MonoBehaviour {
 
 	Camera cam;
 	private GameObject active;
-
+	private LinkedList<float> path;
 	// Use this for initialization
 	void Start () {
 		cam = camera.GetComponentInChildren<Camera>();
 		bike.SetActive (false);
 		active = car;
-
+		path = new LinkedList<float> ();
 	
 	}
 	
@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour {
 				}
 		Vector3 pos = camera.transform.position;
 		pos.x = active.transform.position.x;
+		path.AddLast (pos.x);
 		//camera
 		camera.transform.position =pos ;
 		handleInput ();

@@ -42,10 +42,14 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Player
+    userID: 1
+    uniqueID: 2180341453
+    locked: 0
+  - name: Obstacle
     userID: 2
     uniqueID: 2702956847
     locked: 0
   - name: Background
-    userID: 1
-    uniqueID: 2180341453
+    userID: 3
+    uniqueID: 341631677
     locked: 0

@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
+  - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: car
   m_TagString: Untagged
@@ -23,10 +24,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.9389496, y: 2.61717081, z: -25.4166603}
-  m_LocalScale: {x: .92258209, y: .92258364, z: .27186054}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
+  m_LocalScale: {x: .841025829, y: .841027558, z: .27186054}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2386955d8afdb7943af9c75b78f1f34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  camSize: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -46,7 +60,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_SortingLayerID: 2180341453
   m_Sprite: {fileID: 21300000, guid: 729cd9ebd4d428e499d6a8aebb7ce09b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
