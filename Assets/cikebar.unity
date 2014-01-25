@@ -122,8 +122,8 @@ Camera:
   m_GameObject: {fileID: 160133176}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: .0147058964, g: .00940744858, b: .00940744858, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 1355308052}
   bike: {fileID: 1317318861}
+  camera: {fileID: 160133176}
 --- !u!4 &506019791
 Transform:
   m_ObjectHideFlags: 0
@@ -262,6 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2386955d8afdb7943af9c75b78f1f34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
+  camSize: 3
 --- !u!212 &1317318863
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -294,7 +297,7 @@ Transform:
   m_GameObject: {fileID: 1317318861}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: .841025829, y: .841027558, z: .27186054}
+  m_LocalScale: {x: .535847485, y: .535848379, z: .27186054}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1355308052
@@ -325,6 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2386955d8afdb7943af9c75b78f1f34d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  camSize: 5
 --- !u!212 &1355308054
 SpriteRenderer:
   m_ObjectHideFlags: 0
