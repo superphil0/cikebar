@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
 		cam = camera.GetComponentInChildren<Camera>();
 		active = bike;
 		car.renderer.enabled = false;
+		car.collider2D.enabled = false;
 		cam.orthographicSize = active.GetComponent<VehicleController>().camSize;
 		BackgroundBehaviour.speed = active.GetComponent<VehicleController> ().speed;
 	}

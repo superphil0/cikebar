@@ -64,6 +64,7 @@ public class VehicleController : MonoBehaviour {
 		activeLinerenderer = !state;
 		if (activeLinerenderer)
 			path.RemoveLast ();
+		this.gameObject.collider2D.enabled = state;
 		this.gameObject.GetComponentInChildren<LineRenderer> ().enabled = !state;
 	}
 
@@ -72,18 +73,19 @@ public class VehicleController : MonoBehaviour {
 		if (state)
 			reset ();
 		// TODO change sprite here
-
+		this.gameObject.collider2D.enabled = state;
 		this.gameObject.renderer.enabled = state;
 	}
 	public void reset()
 	{
 		path.Clear ();
 	}
-
+	
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (!other.gameObject.layer.Equals (this.gameObject.layer))
-			controller.setGameOver ();
+		Debug.Log(other.name);
+		controller.setGameOver ();
+
 	}
 
 	public void move(float offset)

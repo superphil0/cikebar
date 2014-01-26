@@ -94,12 +94,15 @@ public class BackgroundBehaviour : MonoBehaviour {
 	// granularity stepsize (how often could there be an object: between 1-5 should be ok
 	void obstacleGenerator(float fieldLength, float probability, float granularity)
 	{
+		int j = 0;
 		for(float i = 8.0f; i < fieldLength-5; i+=granularity)
 		{
 			if(Random.Range(0.0f,1.0f)< probability)
 			{
 				Transform obstacle1 = Instantiate (obstacle,new Vector3(Random.Range(-2.5f, 2.5f), i, 0),Quaternion.identity) as Transform;
+				obstacle1.name = "obstacle" + j;
 				obstacles.AddLast (obstacle1);
+				j++;
 			}
 		}
 	}

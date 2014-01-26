@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs" Line="40" Column="21" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\VehicleController.cs" Line="73" Column="3" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\GameController.cs" Line="29" Column="11" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs" Line="102" Column="1" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\VehicleController.cs" Line="88" Column="2" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\GameController.cs" Line="74" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,10 +34,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\code\cikebar\Assets\Standard Assets\Character Controllers\Sources\Scripts\GameController.cs" line="23" />
-      <Breakpoint file="C:\code\cikebar\Assets\Standard Assets\Character Controllers\Sources\Scripts\VehicleController.cs" line="35" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
