@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 60: {fileID: 6000000}
   - 50: {fileID: 5000000}
-  m_Layer: 0
+  - 95: {fileID: 9500000}
+  - 61: {fileID: 6100000}
+  m_Layer: 8
   m_Name: bike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,8 +43,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5430584, z: -.0199999996}
-  m_LocalScale: {x: .535847485, y: .535848379, z: .27186054}
+  m_LocalPosition: {x: 0, y: -1.63374078, z: -.0199999996}
+  m_LocalScale: {x: .289202213, y: .289202511, z: .27186054}
   m_Children:
   - {fileID: 400002}
   m_Father: {fileID: 0}
@@ -73,21 +74,31 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!60 &6000000
-PolygonCollider2D:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Poly:
-    m_Paths:
-    - - {x: -.839999974, y: 1.495}
-      - {x: -.839999974, y: -1.495}
-      - {x: .839999974, y: -1.495}
-      - {x: .839999974, y: 1.495}
+  m_IsTrigger: 0
+  m_Size: {x: 2.44000006, y: 5.02999973}
+  m_Center: {x: 0, y: 0}
+--- !u!95 &9500000
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a07cab1571945e468daf23bbf26bd0a, type: 2}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,7 +169,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 3
   m_SortingLayerID: 2180341453
-  m_Sprite: {fileID: 21300000, guid: 72be2dd7d6f7c24449ac73d26a0554de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46e046bf45e87474e9e31305a492238d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

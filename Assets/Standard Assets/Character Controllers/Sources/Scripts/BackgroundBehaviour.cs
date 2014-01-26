@@ -77,11 +77,17 @@ public class BackgroundBehaviour : MonoBehaviour {
 	}
 	void restart()
 	{
-		gameController.switchUser ();
+
 		foreach(Transform obstac in obstacles) {
 			obstac.Translate( 0f,gameProgress,0f);      
 		}
 		gameProgress = 0.0f;
+		gameController.switchUser ();
+	}
+	public void remake()
+	{
+		obstacles.Clear ();
+		obstacleGenerator (gameLength, probability, granularity);
 	}
 	// 0..100
 	// probability 0..1 if smaller 1 always
@@ -92,8 +98,7 @@ public class BackgroundBehaviour : MonoBehaviour {
 		{
 			if(Random.Range(0.0f,1.0f)< probability)
 			{
-				Transform obstacle1 = Instantiate (obstacle) as Transform;
-				obstacle1.Translate(Random.Range(-2.5f, 2.5f), i, 0);
+				Transform obstacle1 = Instantiate (obstacle,new Vector3(Random.Range(-2.5f, 2.5f), i, 0),Quaternion.identity) as Transform;
 				obstacles.AddLast (obstacle1);
 			}
 		}

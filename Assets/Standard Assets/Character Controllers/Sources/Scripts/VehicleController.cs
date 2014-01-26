@@ -82,7 +82,8 @@ public class VehicleController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		controller.setGameOver ();
+		if (!other.gameObject.layer.Equals (this.gameObject.layer))
+			controller.setGameOver ();
 	}
 
 	public void move(float offset)

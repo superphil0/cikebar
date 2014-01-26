@@ -36,6 +36,8 @@ public class GameController : MonoBehaviour {
 		gameOver = true;
 
 	}
+
+
 	public bool isGameOver()
 	{
 		return gameOver;
@@ -77,6 +79,7 @@ public class GameController : MonoBehaviour {
 			active.GetComponent<VehicleController> ().activateCar (false);
 			active = bike;
 			active.GetComponent<VehicleController> ().activateBike (true);
+			GameObject.Find("World").GetComponent<BackgroundBehaviour>().remake();
 		}
 		else
 		{
