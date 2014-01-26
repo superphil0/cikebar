@@ -42,7 +42,7 @@ public class BackgroundBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Update () {
-		if (gameController.isGameOver())
+		if (gameController.isGameOver() || !gameController.isPlaying())
 						return;
 		Transform firstRoad = roads.First.Value;
 
@@ -67,13 +67,19 @@ public class BackgroundBehaviour : MonoBehaviour {
 		if(destroyed)	
 			newTile();
 		foreach(Transform obstac in obstacles) {
-			obstac.Translate( 0f,-speed * Time.deltaTime,0f);      
+			obstac.Translate( -0.02f,-speed * Time.deltaTime,0f);      
+			Vector3 pos = obstac.transform.position;
+			if(pos.x < -2.8f) pos.x = 2.8f;
+			obstac.transform.position = pos;
 		}
 
 		gameProgress += speed * Time.deltaTime;
 		Debug.Log (gameProgress);
-		if (gameProgress > gameLength)
+		if (gameProgress > gameLength) {
 						restart ();
+						gameController.switchUser ();
+						gameController.completePart();
+				}
 	}
 	void restart()
 	{
@@ -82,12 +88,23 @@ public class BackgroundBehaviour : MonoBehaviour {
 			obstac.Translate( 0f,gameProgress,0f);      
 		}
 		gameProgress = 0.0f;
-		gameController.switchUser ();
+
 	}
 	public void remake()
 	{
+		LinkedList<Transform> destroye = new LinkedList<Transform> ();
+		foreach (Transform t in obstacles) {
+			destroye.AddLast(t);
+				}
+		foreach (Transform t in destroye) {
+			obstacles.Remove(t);
+			Destroy(t.gameObject);
+		
+		}
 		obstacles.Clear ();
-		obstacleGenerator (gameLength, probability, granularity);
+		restart ();
+			obstacleGenerator (gameLength, probability, granularity);
+	
 	}
 	// 0..100
 	// probability 0..1 if smaller 1 always

@@ -66,8 +66,12 @@ public class VehicleController : MonoBehaviour {
 			path.RemoveLast ();
 		this.gameObject.collider2D.enabled = state;
 		this.gameObject.GetComponentInChildren<LineRenderer> ().enabled = !state;
+		if (state)
+						audio.Play ();
+		else
+				audio.Stop ();
 	}
-
+	
 	public void activateCar(bool state)
 	{
 		if (state)
@@ -75,6 +79,10 @@ public class VehicleController : MonoBehaviour {
 		// TODO change sprite here
 		this.gameObject.collider2D.enabled = state;
 		this.gameObject.renderer.enabled = state;
+		if (state)
+						audio.Play ();
+				else
+						audio.Stop ();
 	}
 	public void reset()
 	{

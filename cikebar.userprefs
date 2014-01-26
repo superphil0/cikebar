@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Standard Assets\Character Controllers\Sources\Scripts\GameController.cs">
     <Files>
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs" Line="102" Column="1" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\VehicleController.cs" Line="88" Column="2" />
-      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\GameController.cs" Line="74" Column="24" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\VehicleController.cs" Line="67" Column="46" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\BackgroundBehaviour.cs" Line="105" Column="9" />
+      <File FileName="Assets\Standard Assets\Character Controllers\Sources\Scripts\GameController.cs" Line="17" Column="34" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +14,7 @@
               <Node name="Character Controllers" expanded="True">
                 <Node name="Sources" expanded="True">
                   <Node name="Scripts" expanded="True">
-                    <Node name="BackgroundBehaviour.cs" selected="True" />
+                    <Node name="GameController.cs" selected="True" />
                   </Node>
                 </Node>
               </Node>
